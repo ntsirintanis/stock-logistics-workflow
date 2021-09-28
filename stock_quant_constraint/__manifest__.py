@@ -9,7 +9,7 @@
     "summary": "Ensure quants contain valid values. Consistent with moves.",
     "author": "Therp BV,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/stock-logistics-workflow",
-    "depends": ["stock"],
+    "depends": ["stock", "stock_no_negative"],
     "data": ["data/ir_cron.xml"],
     "installable": True,
 }
