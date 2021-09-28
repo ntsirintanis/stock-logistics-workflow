@@ -150,11 +150,11 @@ class StockQuant(models.Model):
                 continue
             # Compare reserved quantity in quant with moves for the location.
             parameters = {
-                "location_id": self.location_id.id,
-                "product_id": self.product_id.id,
-                "lot_id": self.lot_id.id or 0,
-                "package_id": self.package_id.id or 0,
-                "owner_id": self.owner_id.id or 0,
+                "location_id": quant.location_id.id,
+                "product_id": quant.product_id.id,
+                "lot_id": quant.lot_id.id or 0,
+                "package_id": quant.package_id.id or 0,
+                "owner_id": quant.owner_id.id or 0,
             }
             self.env.cr.execute(RESERVED_STATEMENT, parameters)
             reserved_in_moves = self.env.cr.fetchone()[0]
